@@ -3,6 +3,8 @@ import pickle
 import math
 import streamlit as st
 import streamlit.components.v1 as components
+import os
+from dotenv import load_dotenv
 from groq import Groq
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -601,8 +603,10 @@ STRICT RULES — you must follow these absolutely:
 
 # ── Set your Groq API key here ──
 
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+load_dotenv()
 
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+    
 def ask_groq(user_message):
     try:
         client   = Groq(api_key=GROQ_API_KEY)
