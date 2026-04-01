@@ -9,3 +9,4 @@ seaborn
 joblib
 python-dotenv
 groq
+xgboost
